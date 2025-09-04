@@ -1,59 +1,99 @@
-/* Reset default browser styles */
+:root {
+    --text-color: #000000;
+    --link-color: #26004d;
+    --background-color: #e6e6ff;
+}
+
 * {
-    margin: 10;
-    padding: 10;
-        box-sizing: border-box;
-}   
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    background: #f8f9fa;
-    color: #222;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #e6e6ff;
-    color: #000000;
-    padding: 1.5rem 0;
     font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-.topnav {
-  background-color: #e6e6ff;
-  overflow: hidden;
+    background-color: var(--background-color);
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #060606;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+a {
+    color: var(--link-color);
+    text-decoration: none;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #9999ff;
-  color: black;
+nav {
+    background-color: #e6e6ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 100px;
 }
 
-/* Create a right-aligned (split) link inside the navigation bar */
-.topnav a.split {
-  float: right;
-  background-color: #9999ff;
-  color: #040404;
+nav .left a {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav .right a {
+    color: var(--text-color);
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+nav.right a:last-child {
+    color: var(--background-color);
+    background-color: var(--text-color);
+    padding: 5px 15px
+    ;
+}
+
+nav .right a:hover {
+    color: #99ccff;
 }
 
 
 main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    margin-top: 0rem;
+    height: 100vh; /* Ensures the body takes full viewport height */
+    /* Use linear-gradient for the two-color background */
+    background: linear-gradient(to right, #ccccff 0%, #ccccff 30%, #b3b3ff 0%, #b3b3ff 100%);
+    display: flex; /* Use flexbox to easily center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    font-family: sans-serif;
+    color: #333;
+    text-align: left;
 }
 
+.container {
+    float: left;
+    width: 200px;
+    height: 100px;
+ }
+
+img {
+    max-width: 100%;
+    clip-path: circle(35%);
+    margin-block: 9px;
+}
+
+.content-wrapper {
+    float: right;
+    width: 60%; /* Adjust width as needed for your content */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  margin-bottom: 0;
+}
 section {
     margin-bottom: 2.5rem;
     background: #fff;
@@ -68,11 +108,11 @@ h1, h2, h3 {
 }
 
 footer {
-    background: #222;
+    background: #e6e6ff;
     color: #fff;
     text-align: center;
     padding: 1.5rem 0;
-    margin-top: 3rem;
+    margin-top: 0rem;
 }
 
 footer a {
