@@ -139,6 +139,7 @@ nav .right a:hover {
     background-color: #bbc8fc;
     justify-content: space-between;
     align-items: center;
+    grid-template-columns: 1fr 1fr;
     padding: 10px 10px;
     border-radius: 8px;
     margin: 20px 5px;
@@ -146,26 +147,10 @@ nav .right a:hover {
     gap: 5px;
 }
 
-.id-section .image {
-    float: right;
-    display: flex;
-    justify-content: right;
-    margin: 0 15px;
-}
-
-.id-section .image img {
-    border: 3px outset #e6e6ff;
-    max-width: 250px;
- }
-
-.id-section .text {
-    flex: 5;
-}
-
 .content-wrapper {
-    position: center;
+    position: center; /* Center the content wrapper */
     max-width: 100%; /* Adjust width as needed for your content */
-    margin: 5px 20px; /* Center the content wrapper */
+    margin: 5px 20px;
     padding: 20px;
     background-color: transparent; /* Semi-transparent background for readability */
     border: 4px solid #e6e6ff;
@@ -173,32 +158,48 @@ nav .right a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
- .id-section .text h3 {
+.id-section .text {
     color: var(--link-color);
+    flex: 2;
+}
+
+ .id-section .text h3 {
     font-size: 25px;
+ }
+
+.id-section .text h4 {
+    font-size: 20px;
  }
 
 .id-section .text p {
     font-size: 17px;
-    gap: 20px;
  }
 
-.id-section .text .cells {
-    margin-top: 20px;
+ .id-section .text .cells {
     color: var(--link-color);
  }
 
  .id-section .text .cells .cell {
-    display: inline-block;
     flex-wrap: wrap;
     background-color: #bbc8fc;
     padding: 5px 10px;
-    border: 3px solid #e6e6ff;
-    border-radius: 8px;
+    border: 3px transparent;
     margin-right: 10px;
-    margin-bottom: 10px;
-    transition: .1s;
+    min-height: 250px;
  }
+
+.id-section .image {
+    display: flex;
+    margin: 10px 0 15px;
+}
+
+.id-section .image img {
+    border: 3px outset #e6e6ff;
+    max-width: 250px;
+ }
+
+/* SECTION 3 Graphic Design */
+
 
 /* SECTION 4 Skills */
 .skills-section {
@@ -217,9 +218,9 @@ nav .right a:hover {
 }
 
 .content-wrapper {
-    position: center;
+    position: center; /* Center the content wrapper */
     max-width: 100%; /* Adjust width as needed for your content */
-    margin: 5px 20px; /* Center the content wrapper */
+    margin: 5px 20px;
     padding: 20px;
     background-color: transparent; /* Semi-transparent background for readability */
     border: 4px solid #e6e6ff;
