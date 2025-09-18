@@ -43,27 +43,24 @@ nav .left a {
 
 /* Navigation Links */
 nav .right a {
+    flex: 5;
+    font-size: 20px;
     color: var(--link-color);
     padding: 5px 15px;
     border: 3px solid var(--link-color);
     border-radius: 8px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
     transition: .1s;
  }
 
 nav .right a span {
-    font-size: 17px;
     vertical-align: middle;
-    margin-left: 5px;
 }
 
 nav .right a:last-child {
-    font-size: 17px;
     vertical-align: middle;
     padding: 5px 15px;
-    margin-right: 0;
-
 }
 
 nav .right a:hover {
@@ -181,7 +178,6 @@ nav .right a:hover {
 
 * {box-sizing: border-box}
 
-/* Container needed to position the overlay. Adjust the width as needed */
 .container {
     position: relative;
     flex-wrap: wrap;
@@ -193,19 +189,17 @@ nav .right a:hover {
     max-width: 250px;
 }
 
-/* Make the image to responsive */
 .image {
   display: block;
   max-width: 250px;
   height: auto;
 }
 
-/* The overlay effect - lays on top of the container and over the image */
 .overlay {
   position: absolute;
   bottom: 20px;
   background: #bbc8fc;
-  background: rgba(60, 37, 87, 1); /* Black see-through */
+  background: rgba(60, 37, 87, 1);
   color: #bbc8fc;
   width: 100%;
   height: auto;
@@ -216,7 +210,6 @@ nav .right a:hover {
   text-align: center;
 }
 
-/* When you mouse over the container, fade in the overlay title */
 .container:hover .overlay {
   opacity: 1;
   cursor: pointer;
@@ -275,7 +268,6 @@ nav .right a:hover {
 
 * {box-sizing: border-box}
 
-/* Container needed to position the overlay. Adjust the width as needed */
 .container {
     position: relative;
     flex-wrap: wrap;
@@ -287,19 +279,17 @@ nav .right a:hover {
     max-width: 250px;
 }
 
-/* Make the image to responsive */
 .image {
   display: block;
   max-width: 250px;
   height: auto;
 }
 
-/* The overlay effect - lays on top of the container and over the image */
 .overlay {
   position: absolute;
   bottom: 20px;
   background: #bbc8fc;
-  background: rgba(60, 37, 87, 1); /* Black see-through */
+  background: rgba(60, 37, 87, 1); 
   color: #bbc8fc;
   width: 100%;
   height: auto;
@@ -310,7 +300,6 @@ nav .right a:hover {
   text-align: center;
 }
 
-/* When you mouse over the container, fade in the overlay title */
 .container:hover .overlay {
   opacity: 1;
   cursor: pointer;
@@ -467,7 +456,7 @@ footer a:hover {
     }
 
     .hero-section .headshot img {
-        width: 200px;
+        width: 175px;
     }
      
     /* SECTION 2 Instructional Design*/
@@ -479,52 +468,105 @@ footer a:hover {
         padding: 0px 20px;
     } 
     /* SECTION 5 Contact */
-    .contact-section {
-        padding: 0px 20px;
+    .contact-section h2,
+    .contact-section .group {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 600px) {
+ 
     /* NAVBAR */
     nav {
-        padding: 0 20px;
+        flex-direction: column;
+        padding: 5px 20px;
+        height: 200px;
     }
     
     nav .right a {
-        font-size: 20px;
+        display: flex;
+        font-size: 16px;
     }
     
     nav .right a:last-child {
+        display: flex;
         color: var(--text-color);
         background-color: transparent;
-        padding: 0;
+        margin-bottom: 50px;
+        margin-right: 0;
     }
 
     nav .right a span {
-        display: none;
+        display: flex;
     }
 
  /* Section 1 Hero */
     .hero-section {
-        padding: 0 5px;
+        padding: 10 5px;
+        margin-top: 10px;
     }
 
     .hero-section .text h2 {
         font-size: 20px;
     }
 
+    /* Section 2 Instructional Design */
+    .id-section .text h3,
+    .id-section .text h4 {
+        font-size: 20px;
+    }
+
+    .id-section.text p {
+        font-size: 14px;
+    }
+
+    .id-section .image {
+        margin: 10px 10px;
+        width: 75%
+    }
+
+    /* Section 3 Graphic Design */
+    .graphic-design  .text h3,
+    .graphic-design  .text h4 {
+        font-size: 20px;
+    }
+
+    .graphic-design .text p {
+        font-size: 16px;
+    }
+    
+    .graphic-design .image {
+        margin: 10px 10px;
+        width: 75%
+    }
+
     /* Section 4 Skills */
     .skills-section {
         flex-direction: column;
         padding: 0 20px;
-}
+    }
+
     .skills-section .text h3 {
         font-size: 20px;
     }
 
     .skills-section .cells {
-        font-size: 12px;
-}
+        font-size: 16px;
+    }
 
+    /* Section 5 Contact */
 
+    .contact-section h2 {
+        font-size: 20px;
+    }
+     .contact-section. text{
+        font-size: 16
+    }
+
+    .contact-section .group form button {
+    border: 6px outset;
+    border-radius: 4px;
+    height: 40px;
+    width: 50%;
+    }
 }
