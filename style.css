@@ -75,6 +75,7 @@ nav .right a:hover {
 .hero-section {
     display: flex;
     background-color: #bbc8fc;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 20px 20px;
@@ -131,78 +132,78 @@ nav .right a:hover {
  }
 
 /* SECTION 2 Instructional Design */
-.id-section {
+.section-title {
     display: flex;
-    background-color: #bbc8fc;
-    justify-content: space-between;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    padding: 10px 10px;
-    border-radius: 8px;
-    margin: 20px 5px;
-    margin-bottom: 5px;
-    gap: 5px;
-}
-
-.content-wrapper {
-    position: center; /* Center the content wrapper */
-    max-width: 100%; /* Adjust width as needed for your content */
+    position: center;
+    max-width: 50%;
     margin: 5px 20px;
     padding: 20px;
-    background-color: transparent; /* Semi-transparent background for readability */
+    background-color: transparent;
     border: 4px solid #e6e6ff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.id-section .text {
-    color: var(--link-color);
-    flex: 2;
+.group,
+.container {
+    margin: .5% 0.5%;
 }
 
- .id-section .text h3 {
-    font-size: 25px;
- }
+.id {
+    display: flex;
+    float: left;
+    width: 20%
+}
 
-.id-section .text h4 {
-    font-size: 20px;
- }
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
 
-.id-section .text p {
-    font-size: 17px;
- }
+.group:after {
+  clear: both;
+}
 
- .id-section .text .cells {
-    color: var(--link-color);
- }
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+aside {
+    float: right;
+    margin: 1% 1.5%;
+    width: 75%;
+}
 
 * {box-sizing: border-box}
 
 .container {
+    float: left;
     position: relative;
     flex-wrap: wrap;
     background-color: #bbc8fc;
-    margin: 10px 0 15px;
-    padding: 5px 10px;
+    margin: 0 1.5%;
+    padding: 0px 0px;
     border: 3px transparent;
-    width: 100%;
+    width: 20%;
     max-width: 250px;
 }
 
 .image {
   display: block;
   max-width: 250px;
-  height: auto;
+  max-height: 300px;
 }
 
 .overlay {
   position: absolute;
   bottom: 20px;
   background: #bbc8fc;
-  background: rgba(60, 37, 87, 1);
+  background: rgba(60, 37, 87, 1); 
   color: #bbc8fc;
   width: 100%;
-  height: auto;
+  max-height: 300px;
   transition: .1s;
   opacity:0;
   font-size: 20px;
@@ -215,56 +216,49 @@ nav .right a:hover {
   cursor: pointer;
 }
 
-.id-section .image {
-    display: flex;
-    margin: 10px 0 15px;
-}
-
 /* SECTION 3 Graphic Design */
-.graphic-design {
+.graphic-title {
     display: flex;
-    background-color: #bbc8fc;
-    justify-content: space-between;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    padding: 10px 10px;
-    border-radius: 8px;
-    margin: 20px 5px;
-    margin-bottom: 5px;
-    gap: 5px;
-}
-
-.content-wrapper {
-    position: center; /* Center the content wrapper */
-    max-width: 100%; /* Adjust width as needed for your content */
+    position: center;
+    max-width: 50%;
     margin: 5px 20px;
     padding: 20px;
-    background-color: transparent; /* Semi-transparent background for readability */
+    background-color: transparent;
     border: 4px solid #e6e6ff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.graphic-design .text {
-    color: var(--link-color);
-    flex: 2;
+.group,
+.container {
+    margin: .5% 0.5%;
 }
 
- .graphic-design .text h3 {
-    font-size: 25px;
- }
+.graphic-design {
+    display: flex;
+    float: left;
+    width: 20%
+}
 
-.graphic-design .text h4 {
-    font-size: 20px;
- }
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
 
-.graphic-design .text p {
-    font-size: 17px;
- }
+.group:after {
+  clear: both;
+}
 
- .graphic-design .text .cells {
-    color: var(--link-color);
- }
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+aside {
+    float: right;
+    margin: 1% 1.5%;
+    width: 75%;
+}
 
 * {box-sizing: border-box}
 
@@ -370,23 +364,26 @@ nav .right a:hover {
     margin-bottom: 50px;
 }
 
-.contact-section .h2 {
-    font-size: 35px;
+.contact-section h2 {
+    font-size: 25px;
 }
 
 .contact-section .group {
     display: flex;
+    flex-direction: column;
     gap: 50px;
 }
 
 .contact-section .group .text {
     flex: 2;
+    width: 75%;
 }
 
 .contact-section .group form {
     flex: 3;
     display: flex;
     flex-direction: column;
+    width: 50%;
  }
 
 .contact-section .group form input,
@@ -442,14 +439,7 @@ footer a:hover {
 }
 
  /* Media Queries for Responsiveness */
- @media (max-width: 850px) {
-    /* Section 1 Hero */
-    .hero-section .text h2 {
-        font-size: 25px;
-    }
-}
-
-@media (max-width: 750px) {
+@media (max-width: 900px) {
     /* Section 1 Hero */
     .hero-section {
         flex-direction: column;
@@ -460,13 +450,36 @@ footer a:hover {
     }
      
     /* SECTION 2 Instructional Design*/
-    .id-section {
-        padding: 0px 20px;
+    .section-title,
+    .group .id .container,
+    .group aside {
+        flex-direction: column;
+        font-size: 15px;
     }
+
+    .id {
+        width: 15%;
+    }
+
+    .group aside {
+        width: 60%;
+    }
+
      /* SECTION 3 Graphic Design */
-    .graphic-design-section {
-        padding: 0px 20px;
-    } 
+    .graphic-title,
+    .group .graphic-design .container,
+    .group aside {
+        flex-direction: column;
+        font-size: 15px;
+    }
+
+    .graphic-design {
+        width: 15%;
+    }
+
+    .group aside {
+        width: 60%;
+    }
     /* SECTION 5 Contact */
     .contact-section h2,
     .contact-section .group {
@@ -474,7 +487,7 @@ footer a:hover {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 675px) {
  
     /* NAVBAR */
     nav {
@@ -510,34 +523,44 @@ footer a:hover {
         font-size: 20px;
     }
 
-    /* Section 2 Instructional Design */
-    .id-section .text h3,
-    .id-section .text h4 {
-        font-size: 20px;
+   /* SECTION 2 Instructional Design*/
+    .section-title,
+    .group .id .container,
+    .group aside {
+        flex-direction: column;
+        font-size: 15px;
     }
 
-    .id-section.text p {
-        font-size: 14px;
+    .id {
+        width: 15%;
     }
 
-    .id-section .image {
-        margin: 10px 10px;
-        width: 75%
+    .group aside {
+        width: 40%;
+    }
+
+    .group h3 {
+        font-size: 15px;
     }
 
     /* Section 3 Graphic Design */
-    .graphic-design  .text h3,
-    .graphic-design  .text h4 {
-        font-size: 20px;
+    .graphic-title,
+    .group .graphic-design .container,
+    .group aside {
+        flex-direction: column;
+        font-size: 15px;
     }
 
-    .graphic-design .text p {
-        font-size: 16px;
+    .graphic-design {
+        width: 15%;
     }
-    
-    .graphic-design .image {
-        margin: 10px 10px;
-        width: 75%
+
+    .group aside {
+        width: 40%;
+    }
+
+    .group h3 {
+        font-size: 15px;
     }
 
     /* Section 4 Skills */
@@ -559,7 +582,7 @@ footer a:hover {
     .contact-section h2 {
         font-size: 20px;
     }
-     .contact-section. text{
+     .contact-section .text{
         font-size: 16
     }
 
