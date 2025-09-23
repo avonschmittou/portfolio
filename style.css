@@ -145,7 +145,7 @@ nav .right a:hover {
 }
 
 .group {
-    margin: 5px 20px;
+    margin: 15px 20px 20px;
 }
 
 .container {
@@ -199,26 +199,6 @@ aside {
   max-height: 300px;
 }
 
-.overlay {
-  position: absolute;
-  bottom: 20px;
-  background: #bbc8fc;
-  background: rgba(60, 37, 87, 1); 
-  color: #bbc8fc;
-  width: 100%;
-  max-height: 300px;
-  transition: .1s;
-  opacity:0;
-  font-size: 20px;
-  padding: 5px 10px;
-  text-align: center;
-}
-
-.container:hover .overlay {
-  opacity: 1;
-  cursor: pointer;
-}
-
 /* SECTION 3 Graphic Design */
 .graphic-title {
     display: flex;
@@ -231,83 +211,63 @@ aside {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.group {
-    margin: 5px 20px;
+
+.graphic-section {
+    font-family: 'Nunito Sans', sans-serif;
 }
 
-.container {
-    margin: .5% 0.5%;
+.wrapper {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+  margin-inline: auto;
 }
 
-.graphic-design {
-    display: flex;
-    float: left;
-    width: 20%
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 300px;
+  border: 1px solid #bbc8fc;
+  perspective: 1000px;
 }
 
-.group:before,
-.group:after {
-  content: "";
-  display: table;
-}
-
-.group:after {
-  clear: both;
-}
-
-.group {
-  clear: both;
-  *zoom: 1;
-}
-
-aside {
-    float: right;
-    margin: 1% 1.5%;
-    width: 75%;
-}
-
-* {box-sizing: border-box}
-
-.container {
-    position: relative;
-    flex-wrap: wrap;
-    background-color: #bbc8fc;
-    margin: 10px 0 15px;
-    padding: 5px 10px;
-    border: 3px transparent;
-    width: 100%;
-    max-width: 250px;
-}
-
-.image {
-  display: block;
-  max-width: 250px;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 20px;
-  background: #bbc8fc;
-  background: rgba(60, 37, 87, 1); 
-  color: #bbc8fc;
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
   width: 100%;
-  height: auto;
-  transition: .1s;
-  opacity:0;
-  font-size: 20px;
-  padding: 5px 10px;
-  text-align: center;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-.container:hover .overlay {
-  opacity: 1;
-  cursor: pointer;
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
-.graphic-design .image {
-    display: flex;
-    margin: 10px 0 15px;
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 10px 10px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbc8fc;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #e6e6ff;
+  color: #000000;
+  transform: rotateY(180deg);
 }
 
 /* SECTION 4 Skills */
@@ -327,10 +287,10 @@ aside {
 }
 
 .content-wrapper {
-    position: center; /* Center the content wrapper */
-    max-width: 100%; /* Adjust width as needed for your content */
+    position: center;
+    max-width: 100%;
     padding: 20px;
-    background-color: transparent; /* Semi-transparent background for readability */
+    background-color: transparent;
     border: 4px solid rgb(230, 230, 255);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -444,7 +404,7 @@ footer a:hover {
 }
 
  /* Media Queries for Responsiveness */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
     /* Section 1 Hero */
     .hero-section {
         flex-direction: column;
@@ -470,21 +430,12 @@ footer a:hover {
         width: 60%;
     }
 
-     /* SECTION 3 Graphic Design */
-    .graphic-title,
-    .group .graphic-design .container,
-    .group aside {
+    /* Section 3 Graphic Design */
+    .wrapper {
         flex-direction: column;
-        font-size: 15px;
-    }
+        width: 50%;
+}
 
-    .graphic-design {
-        width: 15%;
-    }
-
-    .group aside {
-        width: 60%;
-    }
     /* SECTION 5 Contact */
     .contact-section h2,
     .contact-section .group {
@@ -492,7 +443,7 @@ footer a:hover {
     }
 }
 
-@media (max-width: 675px) {
+@media (max-width: 700px) {
  
     /* NAVBAR */
     nav {
@@ -534,11 +485,15 @@ footer a:hover {
     .group aside {
         flex-direction: column;
         font-size: 15px;
+        margin: 10px 10px;
     }
 
     .id {
-        width: 15%;
+        width: 10%;
     }
+    .group {
+    margin: 10px 15px;
+}
 
     .group aside {
         width: 40%;
@@ -547,28 +502,13 @@ footer a:hover {
     .group h3 {
         font-size: 15px;
     }
-
     /* Section 3 Graphic Design */
-    .graphic-title,
-    .group .graphic-design .container,
-    .group aside {
-        flex-direction: column;
-        font-size: 15px;
-    }
+    .wrapper {
+    flex-direction: column;
+    width: 100%;
+}
 
-    .graphic-design {
-        width: 15%;
-    }
-
-    .group aside {
-        width: 40%;
-    }
-
-    .group h3 {
-        font-size: 15px;
-    }
-
-    /* Section 4 Skills */
+     /* Section 4 Skills */
     .skills-section {
         flex-direction: column;
         padding: 0 20px;
