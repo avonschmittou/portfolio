@@ -134,7 +134,7 @@ nav .right a:hover {
 /* SECTION 2 Instructional Design */
 .section-title {
     display: flex;
-    position: center;
+    align-items: center;
     max-width: 50%;
     margin: 5px 20px;
     padding: 20px;
@@ -145,6 +145,8 @@ nav .right a:hover {
 }
 
 .group {
+    display: flex;
+    flex-direction: column;
     margin: 15px 20px 20px;
 }
 
@@ -156,27 +158,6 @@ nav .right a:hover {
     display: flex;
     float: left;
     width: 20%
-}
-
-.group:before,
-.group:after {
-  content: "";
-  display: table;
-}
-
-.group:after {
-  clear: both;
-}
-
-.group {
-  clear: both;
-  *zoom: 1;
-}
-
-aside {
-    float: right;
-    margin: 1% 1.5%;
-    width: 75%;
 }
 
 * {box-sizing: border-box}
@@ -217,8 +198,10 @@ aside {
 }
 
 .wrapper {
-  display: grid;
-  gap: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   max-width: 1000px;
   margin-inline: auto;
@@ -232,7 +215,6 @@ aside {
   perspective: 1000px;
 }
 
-/* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -242,12 +224,10 @@ aside {
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
@@ -257,13 +237,11 @@ aside {
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: #bbc8fc;
   color: black;
 }
 
-/* Style the back side */
 .flip-card-back {
   background-color: #e6e6ff;
   color: #000000;
@@ -416,9 +394,9 @@ footer a:hover {
      
     /* SECTION 2 Instructional Design*/
     .section-title,
-    .group .id .container,
-    .group aside {
+    .group, {
         flex-direction: column;
+        align-items: center;
         font-size: 15px;
     }
 
@@ -481,8 +459,7 @@ footer a:hover {
 
    /* SECTION 2 Instructional Design*/
     .section-title,
-    .group .id .container,
-    .group aside {
+    .group {
         flex-direction: column;
         font-size: 15px;
         margin: 10px 10px;
@@ -505,7 +482,7 @@ footer a:hover {
     /* Section 3 Graphic Design */
     .wrapper {
     flex-direction: column;
-    width: 100%;
+    width: 50%;
 }
 
      /* Section 4 Skills */
