@@ -29,42 +29,33 @@ a {
 nav {
     background-color: #e6e6ff;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    height: 100px;
+    padding: 20px 20px;
 }
 
-nav .left a {
-    color: var(--link-color);
-    font-size: 25px;
-    font-weight: bold;
+nav h2 {
+    display: flex;
+    font-size: 35px;
 }
 
 /* Navigation Links */
-nav .right a {
-    flex: 5;
+nav a {
+    display: flex;
     font-size: 20px;
+    margin-left: 20px;
+    padding: 0 5px 5px 5px;
+    border: 8px outset #c1acce;
     color: var(--link-color);
-    padding: 5px 15px;
-    border: 3px solid var(--link-color);
     border-radius: 8px;
-    margin-left: 10px;
-    margin-top: 10px;
+    height: 40px;
     transition: .1s;
- }
-
-nav .right a span {
-    vertical-align: middle;
 }
 
-nav .right a:last-child {
-    vertical-align: middle;
-    padding: 5px 15px;
+nav a span {
+    justify-content: center;
 }
 
-nav .right a:hover {
-    padding: 5px 15px;
+nav a:hover {
+    padding: 5px 5px;
     background-color: #bbc8fc;
     color: #071CC8;
     border: 3px solid #071CC8;
@@ -117,11 +108,13 @@ nav .right a:hover {
  .hero-section .text .links a {
     display: inline-block;
     background-color: #bbc8fc;
-    padding: 5px 10px;
-    border: 3px solid var(--link-color);
-    border-radius: 8px;
+    padding: 0px 10px;
     margin-right: 10px;
     margin-bottom: 5px;
+    border: 8px outset #c1acce;
+    color: var(--link-color);
+    border-radius: 8px;
+    height: 40px;
     transition: .1s;
  }
 
@@ -129,6 +122,8 @@ nav .right a:hover {
     background-color: #e6e6ff;
     color: #071CC8;
     border: 3px solid #071CC8;
+    padding: 5px 10px;
+
  }
 
 /* SECTION 2 Instructional Design */
@@ -143,23 +138,29 @@ nav .right a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.group {
+.id-group {
     display: flex;
-    vertical-align: left;
-    flex-direction: column;
-    margin: 10px 20px;
+    background-color: #bbc8fc;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    border-radius: 8px;
+    margin: 10px 10px 10px 10px;
+    gap: 10px;
 }
 
-.text {
+
+.id-group .text {
     flex: 5;
+    margin-left: 15px;
 }
 
- .hero-section .text h3 {
-    font-size: 25px;
+.id-group .text h3 {
+    font-size: 22px;
  }
 
-.hero-section .text p {
+.id-group .text p {
     font-size: 20px;
     gap: 20px;
  }
@@ -170,6 +171,10 @@ nav .right a:hover {
     float: left;
     display: flex;
     justify-content: left;
+}
+
+.container:hover {
+    opacity: 50%;
 }
 
 .image {
@@ -199,6 +204,9 @@ nav .right a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
+    margin: 5px 20px;
+    padding: 10px;
 }
 
 .flip-card {
@@ -382,6 +390,18 @@ footer a {
 }
 
  @media (max-width: 992px) {
+
+    /* NAVBAR */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav h2,
+    nav a{
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+
     /* Section 1 Hero */
     .hero-section {
         flex-direction: column;
@@ -393,31 +413,27 @@ footer a {
      
     /* SECTION 2 Instructional Design*/
     .section-title,
-    .group {
+    .id-group {
         flex-direction: column;
-        font-size: 15px;
     }
-
-    .image {
-    max-width: 200px;
-    max-height: 200px;
-}
-
     /* Section 3 Graphic Design */
+    .graphic-section {
+        margin-right: auto;
+    }
+    
     .wrapper {
         flex-direction: column;
         align-items: center;
         width: 70%;
-
+        margin-right: auto;
 }
 
     .flip-card {
-        width: 70%;
+        width: 80%;
         margin-bottom: 20px;
 }
 
     /* SECTION 5 Contact */
-    .contact-section h2,
     .contact-section .group {
         flex-direction: column;
     }
@@ -426,29 +442,16 @@ footer a {
 @media (max-width: 700px) {
  
     /* NAVBAR */
-    nav {
-        flex-direction: column;
-        padding: 5px 20px;
-        height: 200px;
-    }
+    nav h2{
+        font-size: 28px;
+    }    
     
-    nav .right a {
+    .nav a {
         display: flex;
-        font-size: 16px;
-    }
-    
-    nav .right a:last-child {
-        display: flex;
-        color: var(--text-color);
-        background-color: transparent;
-        margin-bottom: 50px;
-        margin-right: 0;
+        font-size: 20px;
     }
 
-    nav .right a span {
-        display: flex;
-    }
-
+    
  /* Section 1 Hero */
     .hero-section {
         padding: 10 5px;
@@ -459,13 +462,28 @@ footer a {
         font-size: 20px;
     }
 
+    /* SECTION 2 Instructional Design*/
+    .id-group {
+        width: 60%;
+        margin-left: 0;
+    }
+    .id-group .text h3 {
+        font-size: 20px;
+    }
+
+    * {box-sizing: border-box}
+
+    .container {
+        margin-right: auto;
+    }
+
     /* Section 3 Graphic Design */
     .wrapper {
         width: 60%;
 }
 
     .flip-card {
-        width: 60%;
+        width: 100%;
         margin-bottom: 2px;
 }
 
@@ -486,10 +504,7 @@ footer a {
     /* Section 5 Contact */
 
     .contact-section h2 {
-        font-size: 20px;
-    }
-     .contact-section .text{
-        font-size: 16
+        font-size: 16px;
     }
 
     .contact-section .group form button {
@@ -497,6 +512,6 @@ footer a {
         border-radius: 4px;
         height: 40px;
         width: 70%;
-        font-size: 14px;
+        font-size: 12px;
     }
 }
