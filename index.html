@@ -10,7 +10,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     </head>
     <body>
-
         <header>
             <!--NAVBAR-->
             <nav>
@@ -21,11 +20,14 @@
                 <a href="https://www.linkedin.com/in/avonschmittou/" target="_blank" rel="noopener noreferrer">
                     <span>LinkedIn</span>
                 </a>
+                <a href="https://www.upwork.com/freelancers/~01cc99af6ffdb625f9?mp_source=share" target="_blank" rel="noopener noreferrer">
+                    <span>Upwork</span>
+                </a>
             </nav>
         </header>
 
         <main>
-            
+
             <!--SECTION 1 Hero-->
             <section class="hero-section">
 
@@ -35,7 +37,7 @@
 
                 <div class="text">
                     <h2>Hi there! I'm Angela &#x1F604;</h2>
-                    <p>As a lifelong learner, I have always believed that learning should feel meaningful and empowering. I'm lucky enough to have experience in education and technology. As an Instructional Designer, I'm able to blend technology with education in order to create learning experiences that last. I truly enjoy translating complex ideas into clear lessons that increase accessibility for every learner. Designing impactful learning that makes a difference is my ultimate goal.</p>
+                    <p>As a lifelong learner, I have always believed that learning should feel meaningful and empowering. I'm lucky enough to have experience in education and technology. As an Instructional Designer, I'm able to blend technology with education in order to create learning experiences that last. I truly enjoy translating complex ideas into clear lessons that increase accessibility for every learner. Designing impactful learning that makes a difference is my ultimate goal. I also enjoy creating graphics and web design. Check out my work below!</p>
                 <div class="links">
 
                     <a href="#id">
@@ -165,7 +167,7 @@
                             </div>
                             <div class="flip-card-back">
                                 <strong>Build Your Brain</strong>
-                                <p>Need: Flyer for reminders on keeping your brain in shape with little effort</p>
+                                <p>Need: Flyer for reminders on keeping your brain in shape with little effort.</p>
                                 <p>Tools: Canva</p>
                             </div>
                         </div>
@@ -177,7 +179,7 @@
                             </div>
                             <div class="flip-card-back">
                                 <strong>Butterfly Thank You Card</strong>
-                                <p>Need: Small business wanted thank you card to include in customer packages.</p>
+                                <p>Need: Thank you card to include in customer packages.</p>
                                 <p>Tools: Procreate, Photoshop, Over (now known as GoDaddy Studio)</p>
                             </div>
                         </div>
@@ -414,7 +416,7 @@
                     <h2>Let's connect!  Fill out the contact form to see how I can help with your projects.</h2>
                     </div>
           
-                    <form action="/submit_form" method="post">
+                    <form action="https://formsubmit.co/avonschmittou@gmail.com" method="POST">
                         <label for="name">Name:</label>
                         <input type="text" id="name">
 
@@ -429,9 +431,6 @@
                 </div>
             </section>
         </main>
-    </body>
-</html>
-</main>
 
         <footer>
             &nbsp;
@@ -439,5 +438,28 @@
             &nbsp;
         </footer>
 
+<button onclick="topFunction()" id="myBtn" title="Back to top">Top</button>
+
+<script>
+// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
     </body>
-    </html>
+</html>
