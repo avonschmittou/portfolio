@@ -417,16 +417,25 @@
                     </div>
           
                     <form action="https://formsubmit.co/avonschmittou@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New message from avonschmittou.com!">
+                        <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
+                        <input type="hidden" name="_template" value="table">
+
+
+
                         <label for="name">Name:</label>
-                        <input type="text" id="name">
+                        <input type="text" id="name" name="name">
 
                         <label for="email">Email:</label>
-                        <input type="email" id="email">
+                        <input type="email" id="email" name="email" required placeholder="Email address">
 
                         <label for="message">Message:</label>
-                        <textarea id="message" cols="30" rows="10"></textarea>
+                        <textarea id="message" name="message" cols="30" rows="10"></textarea>
 
                         <button type="submit">Send Message</button>
+                        <input type="hidden" name="_next" value="https://avonschmittou.com/portfolio/thanks.html">
+
+
                     </form>
                 </div>
             </section>
